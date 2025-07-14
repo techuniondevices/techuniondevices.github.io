@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+select {
+  font-size: 16px;
+  padding: 5px;
+}
+
+main {
+  padding: 20px;
+}
+
+.lang-content {
+  display: none;
+}
+
+.lang-content.active {
+  display: block;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.material-icons {
+  font-size: 24px;
+  vertical-align: middle;
+}
