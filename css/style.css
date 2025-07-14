@@ -7,10 +7,15 @@ body {
 header {
   background-color: #333;
   color: white;
-  padding: 16px 24px;
+  padding: 20px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-title-font {
+  font-size: 24px;
+  font-family: 'Helvetica', sans-serif;
 }
 
 select {
