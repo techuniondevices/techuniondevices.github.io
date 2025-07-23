@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-color: #0a0a1a;
+    background-color: #111111;
     color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -16,11 +16,11 @@ body {
 
 h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
-    color: #00dffc;
+    color: #FFC300;
 }
 
 a {
-    color: #00dffc;
+    color: #FFC300;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -31,9 +31,9 @@ a:hover {
 
 /* Header */
 header {
-    background-color: rgba(10, 10, 26, 0.8);
+    background-color: rgba(17, 17, 17, 0.8);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #2a2a3a;
+    border-bottom: 1px solid #333333;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -83,13 +83,13 @@ nav.container {
     align-items: center;
     cursor: pointer;
     padding: 5px 10px;
-    border: 1px solid #2a2a3a;
+    border: 1px solid #333333;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .language-selected:hover {
-    background-color: #1a1a2a;
+    background-color: #222222;
 }
 
 .language-selected span {
@@ -101,8 +101,8 @@ nav.container {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #1a1a2a;
-    border: 1px solid #2a2a3a;
+    background-color: #222222;
+    border: 1px solid #333333;
     border-radius: 5px;
     list-style: none;
     padding: 0.5rem 0;
@@ -122,8 +122,8 @@ nav.container {
 }
 
 .language-options li a:hover {
-    background-color: #00dffc;
-    color: #0a0a1a;
+    background-color: #FFC300;
+    color: #111111;
 }
 
 /* Hero Section */
@@ -134,7 +134,7 @@ nav.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: radial-gradient(ellipse at bottom, #333333 0%, #111111 100%);
 }
 
 #hero h1 {
@@ -151,8 +151,8 @@ nav.container {
 }
 
 .cta-button {
-    background: #00dffc;
-    color: #0a0a1a;
+    background: #FFC300;
+    color: #111111;
     padding: 15px 30px;
     border-radius: 5px;
     font-family: 'Orbitron', sans-serif;
@@ -173,8 +173,8 @@ nav.container {
     width: 100%;
     max-width: 800px;
     height: 400px;
-    background-color: #1a1a2a;
-    border: 1px solid #2a2a3a;
+    background-color: #222222;
+    border: 1px solid #333333;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -201,9 +201,9 @@ nav.container {
 }
 
 .feature-card {
-    background: #1a1a2a;
+    background: #222222;
     padding: 2rem;
-    border: 1px solid #2a2a3a;
+    border: 1px solid #333333;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -211,13 +211,13 @@ nav.container {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 223, 252, 0.1);
+    box-shadow: 0 10px 20px rgba(255, 195, 0, 0.1);
 }
 
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #00dffc;
+    color: #FFC300;
 }
 
 .feature-card h3 {
@@ -228,7 +228,7 @@ nav.container {
 /* Use Cases Section */
 #use-cases {
     padding: 80px 0;
-    background-color: #0a0a1a;
+    background-color: #111111;
 }
 
 #use-cases h2 {
@@ -246,7 +246,7 @@ nav.container {
 
 .tab-link {
     background: none;
-    border: 1px solid #2a2a3a;
+    border: 1px solid #333333;
     color: #a0a0b0;
     padding: 10px 20px;
     cursor: pointer;
@@ -256,17 +256,17 @@ nav.container {
 }
 
 .tab-link.active, .tab-link:hover {
-    background: #00dffc;
-    color: #0a0a1a;
-    border-color: #00dffc;
+    background: #FFC300;
+    color: #111111;
+    border-color: #FFC300;
 }
 
 .tab-content {
     display: none;
-    background: #1a1a2a;
+    background: #222222;
     padding: 2rem;
     border-radius: 10px;
-    border: 1px solid #2a2a3a;
+    border: 1px solid #333333;
 }
 
 .tab-content.active {
@@ -277,7 +277,7 @@ nav.container {
 #download {
     padding: 100px 0;
     text-align: center;
-    background: linear-gradient(180deg, #0a0a1a 0%, #1b2735 100%);
+    background: linear-gradient(180deg, #111111 0%, #222222 100%);
 }
 
 #download h2 {
@@ -287,8 +287,8 @@ nav.container {
 
 /* Footer */
 footer {
-    background-color: #0a0a1a;
-    border-top: 1px solid #2a2a3a;
+    background-color: #111111;
+    border-top: 1px solid #333333;
     padding: 2rem 0;
     text-align: center;
 }
@@ -316,10 +316,10 @@ footer {
 }
 
 .modal-content {
-    background-color: #1a1a2a;
+    background-color: #222222;
     margin: 15% auto; 
     padding: 20px;
-    border: 1px solid #2a2a3a;
+    border: 1px solid #333333;
     width: 80%;
     max-width: 700px;
     border-radius: 10px;
@@ -336,7 +336,7 @@ footer {
 
 .close-button:hover,
 .close-button:focus {
-    color: #00dffc;
+    color: #FFC300;
     text-decoration: none;
     cursor: pointer;
 }
@@ -344,10 +344,10 @@ footer {
 .terms-text {
     height: 200px;
     overflow-y: scroll;
-    border: 1px solid #2a2a3a;
+    border: 1px solid #333333;
     padding: 15px;
     margin-bottom: 15px;
-    background-color: #0a0a1a;
+    background-color: #111111;
     text-align: left;
 }
 
