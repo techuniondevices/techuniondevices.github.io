@@ -1,59 +1,117 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Union Devices Project</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">SyncSphere - Unify Your Devices</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav class="container">
+            <div class="logo" data-i18n="logo">SyncSphere</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                    <li><a href="#use-cases" data-i18n="nav_use_cases">Use Cases</a></li>
+                    <li><a href="#download" data-i18n="nav_download">Download</a></li>
+                </ul>
+                <div class="language-selector">
+                    <div class="language-selected" onclick="toggleLanguageDropdown()">
+                        <span data-i18n="lang_selector">Language</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="changeLanguage('ja')">日本語</a></li>
+                        <li><a href="#" onclick="changeLanguage('zh')">简体中文</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<header>
-  <div class="header-title-font">Union Devices</div>
-  <div class="lang-selector">
-    <span class="material-icons">language</span>
-    <select id="language-select">
-      <option value="ja">日本語</option>
-      <option value="en">English</option>
-      <option value="zh">简体中文</option>
-    </select>
-  </div>
-</header>
-<main>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1 data-i18n="hero_title">Unlock Seamless Synergy: Your Phone and PC, United.</h1>
+                <p class="subtitle" data-i18n="hero_subtitle">Experience the future of connectivity. Effortlessly bridge your mobile and desktop worlds for unparalleled productivity and control.</p>
+                <a href="#download" class="cta-button" data-i18n="hero_cta">Download for Windows</a>
+                <div class="hero-image">
+                    <img src="img/hero-image.png" alt="App screenshot showing connection between phone and PC">
+                </div>
+            </div>
+        </section>
 
-  <div class="sample1">
-    <div class="lang-content" data-lang="ja">
-      <h1>ようこそ</h1>
-      <p>このページは日本語で表示されています。</p>
-    </div>
-    <div class="lang-content" data-lang="en">
-      <h1>Welcome</h1>
-      <p>This page is displayed in English.</p>
-    </div>
-    <div class="lang-content" data-lang="zh">
-      <h1>欢迎</h1>
-      <p>此页面以简体中文显示。</p>
-    </div>
-  </div>
+        <section id="features" class="container">
+            <h2 data-i18n="features_title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">[ICON]</div>
+                    <h3 data-i18n="feature_1_title">Instant File Transfer</h3>
+                    <p data-i18n="feature_1_desc">Drag and drop files of any size between your devices at lightspeed. No clouds, no cables, no hassle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">[ICON]</div>
+                    <h3 data-i18n="feature_2_title">Unified Notifications</h3>
+                    <p data-i18n="feature_2_desc">Receive and manage all your phone's notifications directly on your desktop. Never miss an important alert.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">[ICON]</div>
+                    <h3 data-i18n="feature_3_title">Shared Clipboard</h3>
+                    <p data-i18n="feature_3_desc">Copy on one device, paste on the other. A truly seamless clipboard experience for text, links, and images.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">[ICON]</div>
+                    <h3 data-i18n="feature_4_title">Remote Control</h3>
+                    <p data-i18n="feature_4_desc">Mirror your phone's screen and control it with your mouse and keyboard. Perfect for presentations and mobile gaming.</p>
+                </div>
+            </div>
+        </section>
 
-  <div class="sample2">
-    <p>確認用</p>
-  </div>
+        <section id="use-cases">
+            <div class="container">
+                <h2 data-i18n="use_cases_title">Built for the Modern User</h2>
+                <div class="use-case-tabs">
+                    <button class="tab-link active" onclick="openTab(event, 'engineers')" data-i18n="tab_engineers">For Engineers</button>
+                    <button class="tab-link" onclick="openTab(event, 'creators')" data-i18n="tab_creators">For Creators</button>
+                    <button class="tab-link" onclick="openTab(event, 'gamers')" data-i18n="tab_gamers">For Gamers</button>
+                </div>
 
-  <div class="sample3">
-    <div class="lang-content" data-lang="ja">
-      <a href="./content/jp/index.html">リンク</a>
-    </div>
-    <div class="lang-content" data-lang="en">
-      <a href="./content/en/index.html">LINK</a>
-    </div>
-    <div class="lang-content" data-lang="zh">
-      <a href="./content/zh/index.html">移動</a>
-    </div>
-  </div>
+                <div id="engineers" class="tab-content active">
+                    <h3 data-i18n="use_case_1_title">Streamlined Development</h3>
+                    <p data-i18n="use_case_1_desc">Push builds to your device, check logs in real-time, and debug without ever leaving your keyboard. SyncSphere accelerates your mobile development workflow.</p>
+                </div>
+                <div id="creators" class="tab-content">
+                    <h3 data-i18n="use_case_2_title">Fluid Creative Flow</h3>
+                    <p data-i18n="use_case_2_desc">Instantly move your assets from your phone to your favorite desktop editing software. Sketch on your tablet and see it appear in Photoshop moments later.</p>
+                </div>
+                <div id="gamers" class="tab-content">
+                    <h3 data-i18n="use_case_3_title">Enhanced Gaming Experience</h3>
+                    <p data-i18n="use_case_3_desc">Manage game invites and chats on your PC without interrupting your session. Use your phone as a secondary screen for maps or inventory.</p>
+                </div>
+            </div>
+        </section>
 
-</main>
+        <section id="download" class="container">
+            <h2 data-i18n="download_title">Get SyncSphere Today</h2>
+            <p data-i18n="download_desc">Available for Windows, macOS, and Linux. The mobile companion app is on Google Play and the App Store.</p>
+            <a href="#" class="cta-button" data-i18n="download_cta">Download Now</a>
+        </section>
+    </main>
 
-<script src="js/script.js"></script>
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_copyright">&copy; 2025 SyncSphere. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#" data-i18n="footer_terms">Terms of Use</a></li>
+                <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+                <li><a href="#" data-i18n="footer_contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
