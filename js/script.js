@@ -72,4 +72,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (document.querySelector(".tab-link.active")) {
         document.querySelector(".tab-link.active").click();
     }
+
+    // Modal Logic
+    const modal = document.getElementById("terms-modal");
+    const downloadButton = document.getElementById("download-button");
+    const closeButton = document.querySelector(".close-button");
+    const agreeCheckbox = document.getElementById("agree-checkbox");
+    const agreeDownloadButton = document.getElementById("agree-download-button");
+
+    downloadButton.onclick = function(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+    }
+
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    agreeCheckbox.onchange = function() {
+        if (this.checked) {
+            agreeDownloadButton.classList.remove("disabled");
+            agreeDownloadButton.href = "/app/samplefile"; // Set the actual download link
+        } else {
+            agreeDownloadButton.classList.add("disabled");
+            agreeDownloadButton.href = "#";
+        }
+    }
+
+    agreeDownloadButton.onclick = function(e) {
+        if (agreeDownloadButton.classList.contains('disabled')) {
+            e.preventDefault();
+        }
+    }
 });
