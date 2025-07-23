@@ -33,5 +33,9 @@
     "footer_copyright": "&copy; 2025 SyncSphere. 無断複写・転載を禁じます。",
     "footer_terms": "利用規約",
     "footer_privacy": "プライバシーポリシー",
-    "footer_contact": "お問い合わせ"
+    "footer_contact": "お問い合わせ",
+    "terms_title": "利用規約",
+    "terms_text": "<p>これはダミーの利用規約です。下のチェックボックスをオンにすると、利用規約に同意したことになります。</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "terms_agree_label": "利用規約に同意します。",
+    "terms_download_button": "ダウンロード"
 }
