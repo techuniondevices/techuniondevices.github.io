@@ -4,6 +4,8 @@
     "nav_features": "機能",
     "nav_use_cases": "使用例",
     "nav_download": "ダウンロード",
+    "nav_releases": "リリース",
+    "nav_contact_us": "お問い合わせ",
     "lang_selector": "言語",
     "hero_title": "シームレスなシナジーを解放：スマホとPCを一つに。",
     "hero_subtitle": "未来の接続性を体験してください。モバイルとデスクトップの世界を簡単につなぎ、比類のない生産性とコントロールを実現します。",
@@ -37,5 +39,17 @@
     "terms_title": "利用規約",
     "terms_text": "<p>これはダミーの利用規約です。下のチェックボックスをオンにすると、利用規約に同意したことになります。</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
     "terms_agree_label": "利用規約に同意します。",
-    "terms_download_button": "ダウンロード"
+    "terms_download_button": "ダウンロード",
+    "contact_page_title": "お問い合わせ - SyncSphere",
+    "contact_title": "お問い合わせ",
+    "contact_email_label": "メールアドレス:",
+    "contact_email_placeholder": "your.email@example.com",
+    "contact_name_label": "お名前:",
+    "contact_name_placeholder": "お名前",
+    "contact_message_label": "内容:",
+    "contact_message_placeholder": "お問い合わせ内容をここに入力してください...",
+    "contact_submit_button": "送信",
+    "releases_page_title": "リリース - SyncSphere",
+    "releases_title": "リリース",
+    "releases_description": "このページにはSyncSphereのリリース情報が掲載されます。"
 }

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="releases_page_title">Releases - SyncSphere</title>
+    <title data-i18n="contact_page_title">Contact Us - SyncSphere</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="container">
-            <a href="index.html" class="logo-link"><div class="logo" data-i18n="logo">SyncSphere</div></a>
+            <div class="logo" data-i18n="logo">SyncSphere</div>
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="index.html#features" data-i18n="nav_features">Features</a></li>
@@ -35,10 +35,23 @@
     </header>
 
     <main>
-        <section id="releases-content" class="container">
-            <h2 data-i18n="releases_title">Releases</h2>
-            <p data-i18n="releases_description">This page will contain information about SyncSphere releases.</p>
-            <!-- Release content will be dynamically added here -->
+        <section id="contact-form" class="container">
+            <h2 data-i18n="contact_title">Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="contact_email_label">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com" data-i18n-placeholder="contact_email_placeholder">
+                </div>
+                <div class="form-group">
+                    <label for="name" data-i18n="contact_name_label">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name" data-i18n-placeholder="contact_name_placeholder">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-i18n="contact_message_label">Message:</label>
+                    <textarea id="message" name="message" rows="8" required placeholder="Your message here..." data-i18n-placeholder="contact_message_placeholder"></textarea>
+                </div>
+                <button type="submit" class="cta-button" data-i18n="contact_submit_button">Send Message</button>
+            </form>
         </section>
     </main>
 
@@ -46,9 +59,9 @@
         <div class="container">
             <p data-i18n="footer_copyright">&copy; 2025 SyncSphere. All Rights Reserved.</p>
             <ul class="footer-links">
-                <li><a href="contact.html" data-i18n="footer_contact">Contact</a></li>
                 <li><a href="#" data-i18n="footer_terms">Terms of Use</a></li>
                 <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+                <li><a href="#" data-i18n="footer_contact">Contact</a></li>
             </ul>
         </div>
     </footer>
