@@ -219,6 +219,12 @@ nav.container {
     color: #FFC300;
 }
 
+.feature-icon img {
+    width: 6rem; /* Adjust size as needed */
+    height: 6rem; /* Adjust size as needed */
+    filter: brightness(0) invert(1); /* Changes icon color to white */
+}
+
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
