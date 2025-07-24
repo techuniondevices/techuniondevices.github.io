@@ -3,65 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー | Tech Union Devices</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title data-i18n="privacy_policy_title">プライバシーポリシー | Tech Union Devices</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="releases.html">リリース</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
+        <nav class="container">
+            <a href="index.html" class="logo-link"><div class="logo" data-i18n="logo">SyncSphere</div></a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html#features" data-i18n="nav_features">Features</a></li>
+                    <li><a href="index.html#use-cases" data-i18n="nav_use_cases">Use Cases</a></li>
+                    <li><a href="index.html#download" data-i18n="nav_download">Download</a></li>
+                    <li><a href="releases.html" data-i18n="nav_releases">Releases</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact_us">Contact Us</a></li>
+                </ul>
+                <div class="language-selector">
+                    <div class="language-selected" onclick="toggleLanguageDropdown()">
+                        <span data-i18n="lang_selector">Language</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="changeLanguage('ja')">日本語</a></li>
+                        <li><a href="#" onclick="changeLanguage('zh')">简体中文</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="privacy-policy">
-            <h1>プライバシーポリシー</h1>
-            <p>Tech Union Devices（以下、「当サイト」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
+            <h1 data-i18n="privacy_policy_h1">プライバシーポリシー</h1>
+            <p data-i18n="privacy_policy_p1">Tech Union Devices（以下、「当サイト」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
 
-            <h2>第1条（個人情報）</h2>
-            <p>「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</p>
+            <h2 data-i18n="privacy_policy_h2_1">第1条（個人情報）</h2>
+            <p data-i18n="privacy_policy_p2">「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</p>
 
-            <h2>第2条（個人情報の収集方法）</h2>
-            <p>当サイトは、ユーザーがお問い合わせフォームを利用する際に、氏名、メールアドレスなどの個人情報をお尋ねすることがあります。</p>
+            <h2 data-i18n="privacy_policy_h2_2">第2条（個人情報の収集方法）</h2>
+            <p data-i18n="privacy_policy_p3">当サイトは、ユーザーがお問い合わせフォームを利用する際に、氏名、メールアドレスなどの個人情報をお尋ねすることがあります。</p>
 
-            <h2>第3条（個人情報を収集・利用する目的）</h2>
-            <p>当サイトが個人情報を収集・利用する目的は、以下のとおりです。</p>
+            <h2 data-i18n="privacy_policy_h2_3">第3条（個人情報を収集・利用する目的）</h2>
+            <p data-i18n="privacy_policy_p4">当サイトが個人情報を収集・利用する目的は、以下のとおりです。</p>
             <ul>
-                <li>ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）</li>
-                <li>重要なお知らせなど必要に応じたご連絡のため</li>
-                <li>上記の利用目的に付随する目的</li>
+                <li data-i18n="privacy_policy_li1">ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）</li>
+                <li data-i18n="privacy_policy_li2">重要なお知らせなど必要に応じたご連絡のため</li>
+                <li data-i18n="privacy_policy_li3">上記の利用目的に付随する目的</li>
             </ul>
 
-            <h2>第4条（利用目的の変更）</h2>
-            <p>当サイトは、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。<br>利用目的の変更を行った場合には、変更後の目的について、当サイト所定の方法により、ユーザーに通知し、または本ウェブサイト上に公表するものとします。</p>
+            <h2 data-i18n="privacy_policy_h2_4">第4条（利用目的の変更）</h2>
+            <p data-i18n="privacy_policy_p5">当サイトは、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。<br>利用目的の変更を行った場合には、変更後の目的について、当サイト所定の方法により、ユーザーに通知し、または本ウェブサイト上に公表するものとします。</p>
 
-            <h2>第5条（個人情報の第三者提供）</h2>
-            <p>当サイトは、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。</p>
+            <h2 data-i18n="privacy_policy_h2_5">第5条（個人情報の第三者提供）</h2>
+            <p data-i18n="privacy_policy_p6">当サイトは、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。</p>
             <ul>
-                <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
-                <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
-                <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+                <li data-i18n="privacy_policy_li4">人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+                <li data-i18n="privacy_policy_li5">公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+                <li data-i18n="privacy_policy_li6">国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
             </ul>
 
-            <h2>第6条（Cookie（クッキー）の使用について）</h2>
-            <p>当サイトでは、アクセス解析のためにCookieを使用しています。Cookieによりブラウザを識別していますが、特定の個人の識別はできない状態で匿名性が保たれています。Cookieの使用を望まない場合、ブラウザからCookieを無効に設定できます。</p>
+            <h2 data-i18n="privacy_policy_h2_6">第6条（Cookie（クッキー）の使用について）</h2>
+            <p data-i18n="privacy_policy_p7">当サイトでは、アクセス解析のためにCookieを使用しています。Cookieによりブラウザを識別していますが、特定の個人の識別はできない状態で匿名性が保たれています。Cookieの使用を望まない場合、ブラウザからCookieを無効に設定できます。</p>
 
-            <h2>第7条（プライバシーポリシーの変更）</h2>
-            <p>本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。<br>当サイトが別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</p>
+            <h2 data-i18n="privacy_policy_h2_7">第7条（プライバシーポリシーの変更）</h2>
+            <p data-i18n="privacy_policy_p8">本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。<br>当サイトが別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</p>
 
-            <h2>第8条（お問い合わせ窓口）</h2>
-            <p>本ポリシーに関するお問い合わせは、下記のお問い合わせフォームからお願いいたします。</p>
-            <a href="contact.html">お問い合わせフォーム</a>
+            <h2 data-i18n="privacy_policy_h2_8">第8条（お問い合わせ窓口）</h2>
+            <p data-i18n="privacy_policy_p9">本ポリシーに関するお問い合わせは、下記のお問い合わせフォームからお願いいたします。</p>
+            <a href="contact.html" data-i18n="privacy_policy_contact_link">お問い合わせフォーム</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Tech Union Devices</p>
+        <div class="container">
+            <p data-i18n="footer_copyright">&copy; 2025 SyncSphere. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="contact.html" data-i18n="footer_contact">Contact</a></li>
+                <li><a href="#" data-i18n="footer_terms">Terms of Use</a></li>
+                <li><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
