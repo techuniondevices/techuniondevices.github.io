@@ -378,6 +378,13 @@ footer {
     max-width: 600px;
 }
 
+#privacy-policy {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #contact-form h2 {
     text-align: center;
     font-size: 2.5rem;
