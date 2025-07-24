@@ -61,7 +61,6 @@ async function setLanguage(lang) {
     }
 }
 
-
 async function changeLanguage(lang) {
     await setLanguage(lang);
     const langText = {
@@ -138,19 +137,55 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Contact Form Logic
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        contactForm.addEventListener('submit', async function(event) {
             event.preventDefault(); // Prevent default form submission
+
+            // Disable the button to prevent multiple submissions
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.5'; // Optional: visual feedback
+            submitButton.style.cursor = 'not-allowed'; // Optional: visual feedback
 
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
 
-            // In a real application, you would send this data to a server-side endpoint.
-            // For a static GitHub Pages site, this will just show an alert.
-            alert(`Message Sent!\nEmail: ${email}\nName: ${name}\nMessage: ${message}\n\n(Note: This is a static site. Actual email sending requires a backend service.)`);
+            const formData = {
+                email: email,
+                name: name,
+                message: message
+            };
 
-            // Optionally, clear the form
-            contactForm.reset();
+            const dummyUrl = 'https://xxxxxxxxxxxxxxxx'; // ダミーのPOSTエンドポイント
+
+            try {
+                const response = await fetch(dummyUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('お問い合わせを送信しました。ありがとうございます！');
+                    contactForm.reset(); // フォームをリセット
+                } else {
+                    alert('お問い合わせの送信に失敗しました。後でもう一度お試しください。');
+                    console.error('Server responded with an error:', response.status, response.statusText);
+                }
+            } catch (error) {
+                alert('ネットワークエラーが発生しました。インターネット接続を確認してください。');
+                console.error('Network error during form submission:', error);
+            } finally {
+                // Re-enable the button after a short delay
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = '1';
+                    submitButton.style.cursor = 'pointer';
+                }, 2000); // 2秒後に再有効化
+            }
         });
     }
 });
