@@ -139,7 +139,7 @@ nav.container {
 }
 
 #hero h1 {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -363,4 +363,65 @@ footer {
 .cta-button.disabled:hover {
     background-color: #555;
     transform: none;
+}
+
+/* Contact Form Styles */
+#contact-form {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    max-width: 600px;
+}
+
+#contact-form h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#contactForm {
+    background: #222222;
+    padding: 3rem;
+    border-radius: 10px;
+    border: 1px solid #333333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #FFC300;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#contactForm .cta-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
 }

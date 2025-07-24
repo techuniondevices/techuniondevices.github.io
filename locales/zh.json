@@ -4,6 +4,8 @@
     "nav_features": "功能",
     "nav_use_cases": "使用案例",
     "nav_download": "下载",
+    "nav_releases": "发布",
+    "nav_contact_us": "联系我们",
     "lang_selector": "语言",
     "hero_title": "解锁无缝协同：您的手机和电脑，合二为一。",
     "hero_subtitle": "体验未来的连接性。轻松连接您的移动和桌面世界，实现无与伦比的生产力和控制力。",
@@ -37,5 +39,17 @@
     "terms_title": "使用条款",
     "terms_text": "<p>这是一个虚拟的使用条款文档。选中下面的复选框，即表示您同意我们的条款和条件。</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
     "terms_agree_label": "我同意使用条款。",
-    "terms_download_button": "下载"
+    "terms_download_button": "下载",
+    "contact_page_title": "联系我们 - SyncSphere",
+    "contact_title": "联系我们",
+    "contact_email_label": "电子邮件:",
+    "contact_email_placeholder": "your.email@example.com",
+    "contact_name_label": "姓名:",
+    "contact_name_placeholder": "您的姓名",
+    "contact_message_label": "内容:",
+    "contact_message_placeholder": "您要留言的内容...",
+    "contact_submit_button": "发送消息",
+    "releases_page_title": "发布 - SyncSphere",
+    "releases_title": "发布",
+    "releases_description": "此页面将包含有关SyncSphere发布的信息。"
 }

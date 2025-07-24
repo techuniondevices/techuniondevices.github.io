@@ -43,6 +43,13 @@ async function setLanguage(lang) {
         }
     });
 
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[key]) {
+            el.placeholder = translations[key];
+        }
+    });
+
     document.documentElement.lang = lang;
     localStorage.setItem('lang', lang);
 }
@@ -80,13 +87,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const agreeCheckbox = document.getElementById("agree-checkbox");
     const agreeDownloadButton = document.getElementById("agree-download-button");
 
-    downloadButton.onclick = function(e) {
-        e.preventDefault();
-        modal.style.display = "block";
+    if (downloadButton) {
+        downloadButton.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        }
     }
 
-    closeButton.onclick = function() {
-        modal.style.display = "none";
+    if (closeButton) {
+        closeButton.onclick = function() {
+            modal.style.display = "none";
+        }
     }
 
     window.onclick = function(event) {
@@ -95,19 +106,42 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    agreeCheckbox.onchange = function() {
-        if (this.checked) {
-            agreeDownloadButton.classList.remove("disabled");
-            agreeDownloadButton.href = "/app/samplefile"; // Set the actual download link
-        } else {
-            agreeDownloadButton.classList.add("disabled");
-            agreeDownloadButton.href = "#";
+    if (agreeCheckbox) {
+        agreeCheckbox.onchange = function() {
+            if (this.checked) {
+                agreeDownloadButton.classList.remove("disabled");
+                agreeDownloadButton.href = "/app/samplefile"; // Set the actual download link
+            } else {
+                agreeDownloadButton.classList.add("disabled");
+                agreeDownloadButton.href = "#";
+            }
         }
     }
 
-    agreeDownloadButton.onclick = function(e) {
-        if (agreeDownloadButton.classList.contains('disabled')) {
-            e.preventDefault();
+    if (agreeDownloadButton) {
+        agreeDownloadButton.onclick = function(e) {
+            if (agreeDownloadButton.classList.contains('disabled')) {
+                e.preventDefault();
+            }
         }
+    }
+
+    // Contact Form Logic
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+
+            // In a real application, you would send this data to a server-side endpoint.
+            // For a static GitHub Pages site, this will just show an alert.
+            alert(`Message Sent!\nEmail: ${email}\nName: ${name}\nMessage: ${message}\n\n(Note: This is a static site. Actual email sending requires a backend service.)`);
+
+            // Optionally, clear the form
+            contactForm.reset();
+        });
     }
 });
