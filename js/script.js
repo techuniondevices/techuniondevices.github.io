@@ -161,15 +161,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const res = await sendInquiry(email, appcode, message);
             if(res) {
-                alert('お問い合わせを送信しました。ありがとうございます！');
+                alert('お問い合わせを送信しました。ありがとうございます。');
+                window.location.href = 'index.html';
             } else {
                 alert('お問い合わせでエラーが発生しました。送信内容をご確認ください。');
-            }
-            setTimeout(() => {
                 submitButton.disabled = false;
                 submitButton.style.opacity = '1';
                 submitButton.style.cursor = 'pointer';
-            }, 2000); // 2秒後に再有効化
+            }
         });
     }
 });
@@ -214,7 +213,8 @@ async function sendInquiry(mail, appcode, content) {
             throw new Error(`POST request failed: ${postResponse.status} - ${errorText}`);
         }
         const postResult = await postResponse.json();
-        return true
+        console.log(postResult);
+        return postResult.code == 200
     } catch (error) {
         return false
     }
