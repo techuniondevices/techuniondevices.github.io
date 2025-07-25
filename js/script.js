@@ -134,6 +134,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         initModalLogic();
     }
 
+    // Load terms of use on terms.html
+    if (currentPath.endsWith('terms.html')) {
+        const savedLang = localStorage.getItem('lang') || 'ja';
+        setLanguage(savedLang);
+    }
+
     // Contact Form Logic
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
