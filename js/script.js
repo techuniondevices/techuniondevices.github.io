@@ -148,44 +148,75 @@ document.addEventListener('DOMContentLoaded', async () => {
             submitButton.style.cursor = 'not-allowed'; // Optional: visual feedback
 
             const email = document.getElementById('email').value;
-            const name = document.getElementById('name').value;
+            const appcode = document.getElementById('name').value;
             const message = document.getElementById('message').value;
 
-            const formData = {
-                email: email,
-                name: name,
-                message: message
-            };
-
-            const dummyUrl = 'https://xxxxxxxxxxxxxxxx'; // ダミーのPOSTエンドポイント
+            const res = await sendInquiry(email, appcode, message);
+            if(res) {
+                alert('お問い合わせを送信しました。ありがとうございます！');
+            } else {
+                alert('お問い合わせでエラーが発生しました。送信内容をご確認ください。');
+            }
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.style.opacity = '1';
+                submitButton.style.cursor = 'pointer';
+            }, 2000); // 2秒後に再有効化
 
             try {
-                const response = await fetch(dummyUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                if (response.ok) {
-                    alert('お問い合わせを送信しました。ありがとうございます！');
-                    contactForm.reset(); // フォームをリセット
-                } else {
-                    alert('お問い合わせの送信に失敗しました。後でもう一度お試しください。');
-                    console.error('Server responded with an error:', response.status, response.statusText);
-                }
+                sendInquiry(email, appcode, message)
             } catch (error) {
                 alert('ネットワークエラーが発生しました。インターネット接続を確認してください。');
                 console.error('Network error during form submission:', error);
             } finally {
                 // Re-enable the button after a short delay
-                setTimeout(() => {
-                    submitButton.disabled = false;
-                    submitButton.style.opacity = '1';
-                    submitButton.style.cursor = 'pointer';
-                }, 2000); // 2秒後に再有効化
             }
         });
     }
 });
+
+/**
+ * APIに問い合わせを送信するメインの非同期関数
+ */
+async function sendInquiry(mail, appcode, content) {
+    const API_URL = 'https://script.google.com/macros/s/AKfycbzPV5xUwD_jwPFK_Pegx7oM2xDAS_DvCWZs0zmrmSWGGNvQI8uEd9a_UKxfKkyqD43ClA/exec';
+    try {
+        const getUrl = `${API_URL}?ac=${appcode}`;
+        const getResponse = await fetch(getUrl);
+
+        if (!getResponse.ok) {
+            const errorText = await getResponse.text();
+            throw new Error(`GET request failed: ${getResponse.status} - ${errorText}`);
+        }
+
+        const getData = await getResponse.json();
+        const dynamicKey = getData.key;
+
+        if (!dynamicKey) {
+            throw new Error('Failed to retrieve a valid key from the server.');
+        }
+
+        const postData = {
+            email: mail,
+            appcode: appcode,
+            content: content,
+            key: dynamicKey
+        };
+
+        const postResponse = await fetch(API_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'text/plain;charset=utf-8',},
+            body: JSON.stringify(postData),
+            redirect: 'follow' 
+        });
+
+        if (!postResponse.ok) {
+            const errorText = await postResponse.text();
+            throw new Error(`POST request failed: ${postResponse.status} - ${errorText}`);
+        }
+        const postResult = await postResponse.json();
+
+    } catch (error) {
+        return false
+    }
+}
