@@ -43,12 +43,16 @@
                     <input type="email" id="email" name="email" required placeholder="your.email@example.com" data-i18n-placeholder="contact_email_placeholder">
                 </div>
                 <div class="form-group">
-                    <label for="name" data-i18n="contact_name_label">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name" data-i18n-placeholder="contact_name_placeholder">
+                    <label for="appcode" data-i18n="contact_appcode_label">App Code:</label>
+                    <input type="text" id="appcode" name="appcode" required placeholder="Your App Code" data-i18n-placeholder="contact_appcode_placeholder" pattern="[a-zA-Z0-9]*" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '')" title="半角英数文字のみ入力できます。">
+                    <small class="form-text text-muted" data-i18n="contact_appcode_description" style="font-size: 0.9em; color: #666;">アプリで確認可能な13桁の英数コードです</small>
                 </div>
                 <div class="form-group">
                     <label for="message" data-i18n="contact_message_label">Message:</label>
-                    <textarea id="message" name="message" rows="8" required placeholder="Your message here..." data-i18n-placeholder="contact_message_placeholder"></textarea>
+                    <textarea id="message" name="message" rows="8" required placeholder="Your message here..." data-i18n-placeholder="contact_message_placeholder" maxlength="1000"></textarea>
+                    <div style="text-align: right; font-size: 0.9em; color: #666;">
+                        <span id="message-char-count">(0/1000)</span>
+                    </div>
                 </div>
                 <button type="submit" class="cta-button" data-i18n="contact_submit_button">Send Message</button>
             </form>

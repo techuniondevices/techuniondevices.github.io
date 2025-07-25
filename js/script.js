@@ -130,13 +130,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Initialize modal logic only on index.html
     const currentPath = window.location.pathname;
-    if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath === '/techuniondevices.github.io/') { // Added /techuniondevices.github.io/ for GitHub Pages root
+    if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath === '/techuniondevices.github.io/') { 
         initModalLogic();
     }
 
     // Contact Form Logic
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        const messageInput = document.getElementById('message');
+        const charCount = document.getElementById('message-char-count');
+
+        messageInput.addEventListener('input', () => {
+            const currentLength = messageInput.value.length;
+            charCount.textContent = `(${currentLength}/1000)`;
+        });
+
         const submitButton = contactForm.querySelector('button[type="submit"]');
 
         contactForm.addEventListener('submit', async function(event) {
@@ -148,7 +156,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             submitButton.style.cursor = 'not-allowed'; // Optional: visual feedback
 
             const email = document.getElementById('email').value;
-            const appcode = document.getElementById('name').value;
+            const appcode = document.getElementById('appcode').value;
             const message = document.getElementById('message').value;
 
             const res = await sendInquiry(email, appcode, message);
@@ -162,15 +170,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 submitButton.style.opacity = '1';
                 submitButton.style.cursor = 'pointer';
             }, 2000); // 2秒後に再有効化
-
-            try {
-                sendInquiry(email, appcode, message)
-            } catch (error) {
-                alert('ネットワークエラーが発生しました。インターネット接続を確認してください。');
-                console.error('Network error during form submission:', error);
-            } finally {
-                // Re-enable the button after a short delay
-            }
         });
     }
 });
@@ -215,7 +214,7 @@ async function sendInquiry(mail, appcode, content) {
             throw new Error(`POST request failed: ${postResponse.status} - ${errorText}`);
         }
         const postResult = await postResponse.json();
-
+        return true
     } catch (error) {
         return false
     }
