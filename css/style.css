@@ -129,13 +129,19 @@ nav.container {
 /* Hero Section */
 #hero {
     padding-top: 150px;
+    padding-bottom: 80px; /* 新しく追加 */
     text-align: center;
-    min-height: 100vh;
+    /* min-height: 100vh; を削除 */
     background: radial-gradient(ellipse at bottom, #333333 0%, #111111 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #hero .container {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 #hero h1 {
@@ -168,25 +174,72 @@ nav.container {
     transform: translateY(-3px);
 }
 
-.hero-image {
+.carousel-container {
+    position: relative;
+    max-width: 900px; /* カルーセル全体の最大幅を調整 */
     margin: 4rem auto;
-    max-width: 800px;
-    min-height: 400px; /* Ensure the container has a minimum height */
-    background-color: #222222;
-    border: 1px solid #333333;
-    border-radius: 10px;
-    font-style: italic;
-    color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.hero-image img {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Scale down to fit within the content box, maintaining aspect ratio */
+.hero-carousel {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto; /* 中央揃え */
+    border: 1px solid #333333;
+    border-radius: 10px;
+    overflow: hidden; /* 画像が横に連結しないように */
+    background-color: #222222;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* モノトーンの半透明な背景 */
+    color: #e0e0e0; /* 矢印の色 */
+    border: none;
+    padding: 20px 10px; /* 縦長感を出すためのパディング */
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 100;
+    border-radius: 8px; /* 丸角長方形 */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 影 */
+}
+
+.carousel-nav:hover {
+    background-color: rgba(0, 0, 0, 1); /* ホバー時に不透明な黒 */
+    transform: translateY(-50%) scale(1.05); /* 少し拡大 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* 影を濃くする */
+}
+
+.carousel-nav.prev {
+    left: -60px; /* carousel-containerに対して外側に配置 */
+}
+
+.carousel-nav.next {
+    right: -60px; /* carousel-containerに対して外側に配置 */
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
 }
 
 /* Features Section */

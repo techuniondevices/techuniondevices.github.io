@@ -40,8 +40,21 @@
                 <h1 data-i18n="hero_title">Unlock Seamless Synergy: Your Phone and PC, United.</h1>
                 <p class="subtitle" data-i18n="hero_subtitle">Experience the future of connectivity. Effortlessly bridge your mobile and desktop worlds for unparalleled productivity and control.</p>
                 <a href="#download" class="cta-button" data-i18n="hero_cta">Download for Windows</a>
-                <div class="hero-image">
-                    <img src="/img/hero-image.png" alt="App screenshot showing connection between phone and PC">
+                <div class="carousel-container">
+                    <div class="hero-carousel">
+                        <div class="carousel-slides">
+                            <img src="/img/hero-image_1.png" alt="App screenshot 1" class="carousel-slide active">
+                            <img src="/img/hero-image_2.png" alt="App screenshot 2" class="carousel-slide">
+                            <img src="/img/hero-image_3.png" alt="App screenshot 3" class="carousel-slide">
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev" onclick="plusSlides(-1)">&#10094;</button>
+                    <button class="carousel-nav next" onclick="plusSlides(1)">&#10095;</button>
                 </div>
             </div>
         </section>

@@ -113,6 +113,44 @@ function initModalLogic() {
     }
 }
 
+let slideIndex = 1;
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("carousel-slide");
+    let dots = document.getElementsByClassName("dot");
+    let carouselSlidesContainer = document.querySelector('.carousel-slides');
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    // Update transform for the carousel slides container
+    if (carouselSlidesContainer) {
+        carouselSlidesContainer.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+    }
+    if (slides[slideIndex - 1]) {
+        slides[slideIndex - 1].classList.add('active');
+    }
+    if (dots[slideIndex - 1]) {
+        dots[slideIndex - 1].classList.add('active');
+    }
+}
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const savedLang = localStorage.getItem('lang') || 'ja'; // Default to Japanese
     await setLanguage(savedLang);
@@ -132,6 +170,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const currentPath = window.location.pathname;
     if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath === '/techuniondevices.github.io/') { 
         initModalLogic();
+        showSlides(slideIndex); // Initialize carousel
     }
 
     // Load terms of use on terms.html
