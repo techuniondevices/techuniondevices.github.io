@@ -171,6 +171,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath === '/techuniondevices.github.io/') { 
         initModalLogic();
         showSlides(slideIndex); // Initialize carousel
+
+        // Auto-slide every 3 seconds
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000);
     }
 
     // Load terms of use on terms.html
